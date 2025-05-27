@@ -2,10 +2,12 @@
 
 class Player
   attr_accessor :name, :life_points
+  @@ennemis = []
 
   def initialize(player_name)
     @life_points = 10
     @name = player_name
+    @@ennemis.push self
   end
 
   def show_state
@@ -34,14 +36,14 @@ end
 class HumanPlayer < Player
   attr_accessor :weapon_level
 
-  def initialize(human_name)
+  def initialize(human_name, weapon_lvl)
     @life_points = 100
     @weapon_level = weapon_lvl
+    @name = human_name
   end
 
   def search_weapon
   dice = rand(1..6)
-  @weapon_level = 1
   new_weapon_lvl = dice
   puts "Tu as trouvé une arme de niveau #{new_weapon_lvl}"
   if @weapon_level < new_weapon_lvl
