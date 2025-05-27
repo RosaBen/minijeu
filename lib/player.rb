@@ -12,11 +12,21 @@ class Player
   end
 
   def gets_damage(damage)
+    @life_points -= damage
     if @life_points <= 0
       puts "le joueur #{@name} a été tué!"
-    else
-      @life_points -= damage
     end
+  end
+
+  def attacks(opponent)
+    puts "#{@name} attaque #{opponent.name}"
+    damage = compute_damage
+    puts "#{opponent.name} a reçu #{damage} points de dommages"
+    opponent.gets_damage(damage)
+  end
+
+  def compute_damage
+    return rand(1..6)
   end
 
 end
