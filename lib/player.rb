@@ -8,7 +8,7 @@ class Player
   end
 
   def show_state
-    puts "#{@name} a #{life_points} points de vie" 
+    puts "#{@name} a #{life_points} points de vie et une arme de niveau #{@weapon_level}" 
   end
 
   def gets_damage(damage)
@@ -29,4 +29,22 @@ class Player
     return rand(1..6)
   end
 
+end
+
+class HumanPlayer < Player
+
+  attr_accessor :weapon_level
+
+  def initialize(player_name)
+    @life_points = 100
+    @weapon_level = weapon_lvl
+  end
+
+  def search_weapon
+
+  end
+
+  def compute_damage
+    return rand(1..6) * @weapon_level
+  end
 end
