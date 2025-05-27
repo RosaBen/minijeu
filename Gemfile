@@ -1,7 +1,9 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 ruby '3.4.2'
-gem 'rspec'
-gem 'pry'
-gem 'rubocop'
 gem 'dotenv'
-gem "reline"
+gem 'pry'
+gem 'reline'
+gem 'rspec'
+gem 'rubocop'
